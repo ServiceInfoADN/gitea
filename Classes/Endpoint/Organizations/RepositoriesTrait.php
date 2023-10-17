@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Organizations;
+namespace Adn\Dwe64\Endpoint\Organizations;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Organizations Repositories Trait
@@ -19,7 +19,7 @@ trait RepositoriesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $organization . '/repos');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -60,6 +60,6 @@ trait RepositoriesTrait
 
         $response = $this->client->request('/org/' . $organization . '/repos', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

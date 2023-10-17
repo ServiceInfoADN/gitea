@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Miscellaneous endpoint
@@ -13,18 +13,6 @@ class Miscellaneous extends AbstractEndpoint implements EndpointInterface
 {
     const BASE_URI = '';
 
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
-     * @param Client $client
-     */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
 
     /**
      * @param string|null $text
@@ -44,7 +32,7 @@ class Miscellaneous extends AbstractEndpoint implements EndpointInterface
         $options['json'] = $this->removeNullValues($options['json']);
 
         $response = $this->client->request(self::BASE_URI . '/markdown', 'POST', $options);
-        return (string)$response->getBody();
+        return $response->getBody()->getContents();
     }
 
     /**
@@ -55,7 +43,7 @@ class Miscellaneous extends AbstractEndpoint implements EndpointInterface
     {
         $options['body'] = $text;
         $response = $this->client->request(self::BASE_URI . '/markdown/raw', 'POST', $options);
-        return (string)$response->getBody();
+        return $response->getBody()->getContents();
     }
 
     /**
@@ -64,7 +52,7 @@ class Miscellaneous extends AbstractEndpoint implements EndpointInterface
     public function signingKeyGPG(): string
     {
         $response = $this->client->request(self::BASE_URI . '/signing-key.gpg');
-        return (string)$response->getBody();
+        return $response->getBody()->getContents();
     }
 
     /**
@@ -73,6 +61,6 @@ class Miscellaneous extends AbstractEndpoint implements EndpointInterface
     public function version(): string
     {
         $response = $this->client->request(self::BASE_URI . '/version');
-        return \GuzzleHttp\json_decode($response->getBody(), true)['version'];
+        return Utils::jsonDecode($response->getBody()->getContents(), true)['version'];
     }
 }

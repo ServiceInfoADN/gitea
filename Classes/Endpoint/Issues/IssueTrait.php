@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Issues;
+namespace Adn\Dwe64\Endpoint\Issues;
 
-use Avency\Gitea\Client;
+use DateTime;
+use GuzzleHttp\Utils;
 
 /**
  * Issues Issue Trait
@@ -21,7 +22,7 @@ trait IssueTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues/' . $index);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -31,7 +32,7 @@ trait IssueTrait
      * @param string|null $assignee
      * @param array|null $assignees
      * @param string|null $body
-     * @param \DateTime|null $dueDate
+     * @param DateTime|null $dueDate
      * @param int|null $milestone
      * @param string|null $state
      * @param string|null $title
@@ -45,7 +46,7 @@ trait IssueTrait
         string $assignee = null,
         array $assignees = null,
         string $body = null,
-        \DateTime $dueDate = null,
+        DateTime $dueDate = null,
         int $milestone = null,
         string $state = null,
         string $title = null,
@@ -56,7 +57,7 @@ trait IssueTrait
             'assignee' => $assignee,
             'assignees' => $assignees,
             'body' => $body,
-            'due_date' => $dueDate ? $dueDate->format(\DateTime::ATOM) : null,
+            'due_date' => $dueDate ? $dueDate->format(DateTime::ATOM) : null,
             'mileston' => $milestone,
             'state' => $state,
             'title' => $title,
@@ -66,7 +67,7 @@ trait IssueTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues/' . $index, 'PATCH', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -76,7 +77,7 @@ trait IssueTrait
      * @param string|null $assignee
      * @param array|null $assignees
      * @param string|null $body
-     * @param \DateTime|null $dueDate
+     * @param DateTime|null $dueDate
      * @param int|null $milestone
      * @param string|null $state
      * @param string|null $title
@@ -87,15 +88,15 @@ trait IssueTrait
         string $owner,
         string $repositoryName,
         int $index,
-        \DateTime $dueDate
+        DateTime $dueDate
     ): array
     {
         $options['json'] = [
-            'due_date' => $dueDate->format(\DateTime::ATOM),
+            'due_date' => $dueDate->format(DateTime::ATOM),
         ];
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues/' . $index . '/deadline', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
-use Avency\Gitea\Endpoint\Organizations\HooksTrait;
-use Avency\Gitea\Endpoint\Organizations\MembersTrait;
-use Avency\Gitea\Endpoint\Organizations\OrganizationTrait;
-use Avency\Gitea\Endpoint\Organizations\RepositoriesTrait;
-use Avency\Gitea\Endpoint\Organizations\TeamsTrait;
-use Avency\Gitea\Endpoint\Organizations\UsersTrait;
+use Adn\Dwe64\Endpoint\Organizations\HooksTrait;
+use Adn\Dwe64\Endpoint\Organizations\MembersTrait;
+use Adn\Dwe64\Endpoint\Organizations\OrganizationTrait;
+use Adn\Dwe64\Endpoint\Organizations\RepositoriesTrait;
+use Adn\Dwe64\Endpoint\Organizations\TeamsTrait;
+use Adn\Dwe64\Endpoint\Organizations\UsersTrait;
 
 /**
  * Organizations endpoint
@@ -26,16 +25,4 @@ class Organizations extends AbstractEndpoint implements EndpointInterface
 
     const BASE_URI = '/orgs';
 
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
-     * @param Client $client
-     */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
 }

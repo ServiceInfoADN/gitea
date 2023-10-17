@@ -5,8 +5,8 @@
     "homepage": "https://www.avency.de",
     "license": ["MIT"],
     "require": {
-        "php": "^7.2",
-        "guzzlehttp/guzzle": "^7.3"
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": ">=7.3"
     },
     "autoload": {
         "psr-4": {
@@ -17,5 +17,8 @@
         "neos": {
             "package-key": "Avency.Gitea"
         }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
     }
 }

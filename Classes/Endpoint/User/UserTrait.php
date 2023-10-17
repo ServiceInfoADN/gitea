@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\User;
+namespace Adn\Dwe64\Endpoint\User;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Users User Trait
@@ -18,7 +18,7 @@ trait UserTrait
     {
         $response = $this->client->request(self::BASE_URI);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -28,7 +28,7 @@ trait UserTrait
     {
         $response = $this->client->request(self::BASE_URI . '/emails');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -43,7 +43,7 @@ trait UserTrait
 
         $response = $this->client->request(self::BASE_URI . '/emails', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -68,7 +68,7 @@ trait UserTrait
     {
         $response = $this->client->request(self::BASE_URI . '/stopwatches');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -78,7 +78,7 @@ trait UserTrait
     {
         $response = $this->client->request(self::BASE_URI . '/teams');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -88,6 +88,6 @@ trait UserTrait
     {
         $response = $this->client->request(self::BASE_URI . '/times');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

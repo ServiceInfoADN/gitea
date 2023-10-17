@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\User;
+namespace Adn\Dwe64\Endpoint\User;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Users Keys Trait
@@ -18,7 +18,7 @@ trait KeysTrait
     {
         $response = $this->client->request(self::BASE_URI . '/gpg_keys');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -33,7 +33,7 @@ trait KeysTrait
 
         $response = $this->client->request(self::BASE_URI . '/gpg_keys', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -44,7 +44,7 @@ trait KeysTrait
     {
         $response = $this->client->request(self::BASE_URI . '/gpg_keys/' . $id);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -65,7 +65,7 @@ trait KeysTrait
     {
         $response = $this->client->request(self::BASE_URI . '/keys');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -85,7 +85,7 @@ trait KeysTrait
 
         $response = $this->client->request(self::BASE_URI . '/keys', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -96,7 +96,7 @@ trait KeysTrait
     {
         $response = $this->client->request(self::BASE_URI . '/keys/' . $id);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

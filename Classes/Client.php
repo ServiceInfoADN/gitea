@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea;
+namespace Adn\Dwe64;
 
-use Avency\Gitea\Endpoint\Admin;
-use Avency\Gitea\Endpoint\EndpointInterface;
-use Avency\Gitea\Endpoint\Issues;
-use Avency\Gitea\Endpoint\Miscellaneous;
-use Avency\Gitea\Endpoint\Organizations;
-use Avency\Gitea\Endpoint\Repositories;
-use Avency\Gitea\Endpoint\User;
-use Avency\Gitea\Endpoint\Users;
+use Adn\Dwe64\Endpoint\Admin;
+use Adn\Dwe64\Endpoint\EndpointInterface;
+use Adn\Dwe64\Endpoint\Issues;
+use Adn\Dwe64\Endpoint\Miscellaneous;
+use Adn\Dwe64\Endpoint\Organizations;
+use Adn\Dwe64\Endpoint\Repositories;
+use Adn\Dwe64\Endpoint\User;
+use Adn\Dwe64\Endpoint\Users;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Client as GuzzleClient;
 
 /**
  * Gitea Client
@@ -35,7 +36,7 @@ class Client
     const BASE_URI = '/api/v1';
 
     /**
-     * @var \GuzzleHttp\Client
+     * @var GuzzleClient
      */
     protected $httpClient;
 
@@ -57,7 +58,7 @@ class Client
 
         $this->auth($authentication);
 
-        $this->httpClient = new \GuzzleHttp\Client($this->config);
+        $this->httpClient = new GuzzleClient($this->config);
     }
 
     /**

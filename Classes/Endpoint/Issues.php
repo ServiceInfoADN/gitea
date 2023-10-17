@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
-use Avency\Gitea\Endpoint\Issues\CommentsTrait;
-use Avency\Gitea\Endpoint\Issues\IssuesTrait;
-use Avency\Gitea\Endpoint\Issues\IssueTrait;
-use Avency\Gitea\Endpoint\Issues\LabelsTrait;
-use Avency\Gitea\Endpoint\Issues\MilestonesTrait;
-use Avency\Gitea\Endpoint\Issues\ReactionsTrait;
-use Avency\Gitea\Endpoint\Issues\StopwatchTrait;
-use Avency\Gitea\Endpoint\Issues\SubscriptionsTrait;
-use Avency\Gitea\Endpoint\Issues\TimesTrait;
+
+use Adn\Dwe64\Endpoint\Issues\CommentsTrait;
+use Adn\Dwe64\Endpoint\Issues\IssuesTrait;
+use Adn\Dwe64\Endpoint\Issues\IssueTrait;
+use Adn\Dwe64\Endpoint\Issues\LabelsTrait;
+use Adn\Dwe64\Endpoint\Issues\MilestonesTrait;
+use Adn\Dwe64\Endpoint\Issues\ReactionsTrait;
+use Adn\Dwe64\Endpoint\Issues\StopwatchTrait;
+use Adn\Dwe64\Endpoint\Issues\SubscriptionsTrait;
+use Adn\Dwe64\Endpoint\Issues\TimesTrait;
 
 /**
  * Issues endpoint
@@ -32,16 +32,4 @@ class Issues extends AbstractEndpoint implements EndpointInterface
 
     const BASE_URI = '/repos';
 
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
-     * @param Client $client
-     */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
 }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Repositories;
+namespace Adn\Dwe64\Endpoint\Repositories;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Repositories Branches Trait
@@ -20,19 +20,19 @@ trait BranchesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/branches');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
      * @param string $owner
      * @param string $repositoryName
-     * @param $branch
+     * @param string $branch
      * @return array
      */
     public function getBranche(string $owner, string $repositoryName, string $branch): array
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/branches/' . $branch);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

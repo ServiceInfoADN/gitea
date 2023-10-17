@@ -2,15 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
+use Adn\Dwe64\Client;
 
 /**
  * Abstract endpoint
  */
 abstract class AbstractEndpoint implements EndpointInterface
 {
+    /**
+     * @var Client
+     */
+    protected Client $client;
+
+    /**
+     * @param Client $client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
     /**
      * @param array $array
      * @return array

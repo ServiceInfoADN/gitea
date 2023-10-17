@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Issues;
+namespace Adn\Dwe64\Endpoint\Issues;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Issues Subscriptions Trait
@@ -21,7 +21,7 @@ trait SubscriptionsTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues/' . $index . '/subscriptions');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Repositories;
+namespace Adn\Dwe64\Endpoint\Repositories;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Repositories Releases Trait
@@ -20,7 +20,7 @@ trait ReleasesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -57,7 +57,7 @@ trait ReleasesTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -70,7 +70,7 @@ trait ReleasesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases/' . $id);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -122,7 +122,7 @@ trait ReleasesTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases/' . $id, 'PATCH', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -135,7 +135,7 @@ trait ReleasesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases/' . $id . '/assets');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -148,7 +148,7 @@ trait ReleasesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases/' . $id . '/assets/' . $assetId);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -179,6 +179,6 @@ trait ReleasesTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/releases/' . $id . '/assets/' . $assetId, 'PATCH', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

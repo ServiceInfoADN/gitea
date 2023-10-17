@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Repositories;
+namespace Adn\Dwe64\Endpoint\Repositories;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Repositories Topics Trait
@@ -20,7 +20,7 @@ trait TopicsTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/topics');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

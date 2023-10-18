@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint;
+namespace Adn\Gitea\Endpoint;
 
-use Adn\Dwe64\Endpoint\Organizations\HooksTrait;
-use Adn\Dwe64\Endpoint\Organizations\MembersTrait;
-use Adn\Dwe64\Endpoint\Organizations\OrganizationTrait;
-use Adn\Dwe64\Endpoint\Organizations\RepositoriesTrait;
-use Adn\Dwe64\Endpoint\Organizations\TeamsTrait;
-use Adn\Dwe64\Endpoint\Organizations\UsersTrait;
+use Adn\Gitea\Endpoint\Organizations\HooksTrait;
+use Adn\Gitea\Endpoint\Organizations\MembersTrait;
+use Adn\Gitea\Endpoint\Organizations\OrganizationTrait;
+use Adn\Gitea\Endpoint\Organizations\RepositoriesTrait;
+use Adn\Gitea\Endpoint\Organizations\TeamsTrait;
+use Adn\Gitea\Endpoint\Organizations\UsersTrait;
 
 /**
  * Organizations endpoint

@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint;
+namespace Adn\Gitea\Endpoint;
 
 
-use Adn\Dwe64\Endpoint\Repositories\BranchesTrait;
-use Adn\Dwe64\Endpoint\Repositories\CollaboratorsTrait;
-use Adn\Dwe64\Endpoint\Repositories\CommitsTrait;
-use Adn\Dwe64\Endpoint\Repositories\ContentsTrait;
-use Adn\Dwe64\Endpoint\Repositories\ForksTrait;
-use Adn\Dwe64\Endpoint\Repositories\GitTrait;
-use Adn\Dwe64\Endpoint\Repositories\HooksTrait;
-use Adn\Dwe64\Endpoint\Repositories\KeysTrait;
-use Adn\Dwe64\Endpoint\Repositories\PullsTrait;
-use Adn\Dwe64\Endpoint\Repositories\ReleasesTrait;
-use Adn\Dwe64\Endpoint\Repositories\RepositoryTrait;
-use Adn\Dwe64\Endpoint\Repositories\StatusesTrait;
-use Adn\Dwe64\Endpoint\Repositories\SubscriptionTrait;
-use Adn\Dwe64\Endpoint\Repositories\TopicsTrait;
+use Adn\Gitea\Endpoint\Repositories\BranchesTrait;
+use Adn\Gitea\Endpoint\Repositories\CollaboratorsTrait;
+use Adn\Gitea\Endpoint\Repositories\CommitsTrait;
+use Adn\Gitea\Endpoint\Repositories\ContentsTrait;
+use Adn\Gitea\Endpoint\Repositories\ForksTrait;
+use Adn\Gitea\Endpoint\Repositories\GitTrait;
+use Adn\Gitea\Endpoint\Repositories\HooksTrait;
+use Adn\Gitea\Endpoint\Repositories\KeysTrait;
+use Adn\Gitea\Endpoint\Repositories\PullsTrait;
+use Adn\Gitea\Endpoint\Repositories\ReleasesTrait;
+use Adn\Gitea\Endpoint\Repositories\RepositoryTrait;
+use Adn\Gitea\Endpoint\Repositories\StatusesTrait;
+use Adn\Gitea\Endpoint\Repositories\SubscriptionTrait;
+use Adn\Gitea\Endpoint\Repositories\TopicsTrait;
 
 /**
  * Repositories endpoint

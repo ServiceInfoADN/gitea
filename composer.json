@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Adn\\Dwe64\\": "Classes"
+            "Adn\\Gitea\\": "Classes"
         }
     },
     "extra": {
@@ -24,7 +24,7 @@
     "repositories": {
         "adn-repository": {
             "type": "vcs",
-            "url": "https://git.web-partage.com/adn/Gitea.git"
+            "url": "git@git.web-partage.com:adn/Gitea.git"
         }
     }
 }

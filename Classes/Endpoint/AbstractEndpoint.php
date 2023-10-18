@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint;
+namespace Adn\Gitea\Endpoint;
 
-use Adn\Dwe64\Client;
+use Adn\Gitea\Client;
 
 /**
  * Abstract endpoint

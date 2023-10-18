@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint;
+namespace Adn\Gitea\Endpoint;
 
-use Adn\Dwe64\Endpoint\User\RepositoriesTrait;
-use Adn\Dwe64\Endpoint\User\UserTrait;
-use Adn\Dwe64\Endpoint\User\FollowersTrait;
-use Adn\Dwe64\Endpoint\User\KeysTrait;
+use Adn\Gitea\Endpoint\User\RepositoriesTrait;
+use Adn\Gitea\Endpoint\User\UserTrait;
+use Adn\Gitea\Endpoint\User\FollowersTrait;
+use Adn\Gitea\Endpoint\User\KeysTrait;
 
 /**
  * User endpoint

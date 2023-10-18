@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint\Repositories;
+namespace Adn\Gitea\Endpoint\Repositories;
 
 use GuzzleHttp\Utils;
 

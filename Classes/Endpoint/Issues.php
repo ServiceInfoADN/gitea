@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint;
+namespace Adn\Gitea\Endpoint;
 
 
-use Adn\Dwe64\Endpoint\Issues\CommentsTrait;
-use Adn\Dwe64\Endpoint\Issues\IssuesTrait;
-use Adn\Dwe64\Endpoint\Issues\IssueTrait;
-use Adn\Dwe64\Endpoint\Issues\LabelsTrait;
-use Adn\Dwe64\Endpoint\Issues\MilestonesTrait;
-use Adn\Dwe64\Endpoint\Issues\ReactionsTrait;
-use Adn\Dwe64\Endpoint\Issues\StopwatchTrait;
-use Adn\Dwe64\Endpoint\Issues\SubscriptionsTrait;
-use Adn\Dwe64\Endpoint\Issues\TimesTrait;
+use Adn\Gitea\Endpoint\Issues\CommentsTrait;
+use Adn\Gitea\Endpoint\Issues\IssuesTrait;
+use Adn\Gitea\Endpoint\Issues\IssueTrait;
+use Adn\Gitea\Endpoint\Issues\LabelsTrait;
+use Adn\Gitea\Endpoint\Issues\MilestonesTrait;
+use Adn\Gitea\Endpoint\Issues\ReactionsTrait;
+use Adn\Gitea\Endpoint\Issues\StopwatchTrait;
+use Adn\Gitea\Endpoint\Issues\SubscriptionsTrait;
+use Adn\Gitea\Endpoint\Issues\TimesTrait;
 
 /**
  * Issues endpoint

@@ -24,7 +24,7 @@
     "repositories": {
         "adn-repository": {
             "type": "vcs",
-            "url": "git@git.web-partage.com:adn/Gitea.git"
+            "url": "https://git.web-partage.com/adn/Gitea"
         }
     }
 }

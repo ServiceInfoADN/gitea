@@ -1,10 +1,11 @@
 {
     "name": "adn/gitea",
+    "version": "1.0.0",
     "description": "Gitea API",
     "type": "library",
     "homepage": "https://www.avency.de",
     "license": ["MIT"],
-    "minimum-stability": "main",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=7.4",

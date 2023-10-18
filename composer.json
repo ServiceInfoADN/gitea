@@ -1,16 +1,16 @@
 {
-    "name": "avency/gitea",
+    "name": "adn/gitea",
     "description": "Gitea API",
     "type": "library",
     "homepage": "https://www.avency.de",
     "license": ["MIT"],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.4",
         "guzzlehttp/guzzle": ">=7.3"
     },
     "autoload": {
         "psr-4": {
-            "Avency\\Gitea\\": "Classes"
+            "Adn\\Dwe64\\": "Classes"
         }
     },
     "extra": {
@@ -20,5 +20,11 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^1.10"
+    },
+    "repositories": {
+        "adn-repository": {
+            "type": "vcs",
+            "url": "https://git.web-partage.com/adn/Gitea.git"
+        }
     }
 }

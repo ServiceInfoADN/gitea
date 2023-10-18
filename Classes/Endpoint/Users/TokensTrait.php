@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint\Users;
+namespace Adn\Gitea\Endpoint\Users;
 
 use GuzzleHttp\Utils;
 

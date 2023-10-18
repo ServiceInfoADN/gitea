@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint;
+namespace Adn\Gitea\Endpoint;
 
 
-use Adn\Dwe64\Endpoint\Users\TokensTrait;
-use Adn\Dwe64\Endpoint\Users\UsersTrait;
+use Adn\Gitea\Endpoint\Users\TokensTrait;
+use Adn\Gitea\Endpoint\Users\UsersTrait;
 
 /**
  * Users endpoint

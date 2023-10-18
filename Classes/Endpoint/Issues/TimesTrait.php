@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64\Endpoint\Issues;
+namespace Adn\Gitea\Endpoint\Issues;
 
 use DateTime;
 use GuzzleHttp\Utils;

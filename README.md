@@ -15,7 +15,7 @@ This package has the following requirements:
 Install latest version via composer:
 
 ```
-composer require avency/gitea
+composer require adn/gitea
 ```
 
 ### Basic usage
@@ -27,20 +27,20 @@ require_once __DIR__ . '/vendor/autoload.php';
 // - - - - -
 
 // Create client and authenticate
-$giteaClient = new Avency\Gitea\Client(
+$giteaClient = new Adn\Gitea\Client(
     'https://gitea.yourdomain.com',
     [
-        'type' => Avency\Gitea\Client::AUTH_TOKEN,
+        'type' => Adn\Gitea\Client::AUTH_TOKEN,
         'auth' => 'your-auth-token'
     ]
 );
 
 or
 
-$giteaClient = new Avency\Gitea\Client(
+$giteaClient = new Adn\Gitea\Client(
     'https://gitea.yourdomain.com',
     [
-        'type' => Avency\Gitea\Client::AUTH_BASIC_AUTH,
+        'type' => Adn\Gitea\Client::AUTH_BASIC_AUTH,
         'auth' => [
             'username' => 'your-username',
             'password' => 'your-password',

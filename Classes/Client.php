@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Adn\Dwe64;
+namespace Adn\Gitea;
 
-use Adn\Dwe64\Endpoint\Admin;
-use Adn\Dwe64\Endpoint\EndpointInterface;
-use Adn\Dwe64\Endpoint\Issues;
-use Adn\Dwe64\Endpoint\Miscellaneous;
-use Adn\Dwe64\Endpoint\Organizations;
-use Adn\Dwe64\Endpoint\Repositories;
-use Adn\Dwe64\Endpoint\User;
-use Adn\Dwe64\Endpoint\Users;
+use Adn\Gitea\Endpoint\Admin;
+use Adn\Gitea\Endpoint\EndpointInterface;
+use Adn\Gitea\Endpoint\Issues;
+use Adn\Gitea\Endpoint\Miscellaneous;
+use Adn\Gitea\Endpoint\Organizations;
+use Adn\Gitea\Endpoint\Repositories;
+use Adn\Gitea\Endpoint\User;
+use Adn\Gitea\Endpoint\Users;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Client as GuzzleClient;

@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
 
 /**
  * Endpoint interface

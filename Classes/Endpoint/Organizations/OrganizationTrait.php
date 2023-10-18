@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Organizations;
+namespace Adn\Dwe64\Endpoint\Organizations;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Organizations Organization Trait
@@ -19,7 +19,7 @@ trait OrganizationTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $organization);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -55,7 +55,7 @@ trait OrganizationTrait
 
         $response = $this->client->request(self::BASE_URI, 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -101,6 +101,6 @@ trait OrganizationTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $organization, 'PATCH', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

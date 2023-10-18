@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
-use Avency\Gitea\Endpoint\Users\TokensTrait;
-use Avency\Gitea\Endpoint\Users\UsersTrait;
+
+use Adn\Dwe64\Endpoint\Users\TokensTrait;
+use Adn\Dwe64\Endpoint\Users\UsersTrait;
 
 /**
  * Users endpoint
@@ -18,16 +18,4 @@ class Users extends AbstractEndpoint implements EndpointInterface
 
     const BASE_URI = '/users';
 
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
-     * @param Client $client
-     */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
 }

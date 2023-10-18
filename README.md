@@ -8,7 +8,7 @@ This package provides an API client for [Gitea](https://gitea.io) API Version 1.
 
 This package has the following requirements:
 
-* PHP 7.2
+* PHP 7.2+
 
 ### Installing
 

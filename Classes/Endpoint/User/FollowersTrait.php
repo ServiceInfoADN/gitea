@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\User;
+namespace Adn\Dwe64\Endpoint\User;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Users Followers Trait
@@ -18,7 +18,7 @@ trait FollowersTrait
     {
         $response = $this->client->request(self::BASE_URI . '/followers');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -28,7 +28,7 @@ trait FollowersTrait
     {
         $response = $this->client->request(self::BASE_URI . '/following');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

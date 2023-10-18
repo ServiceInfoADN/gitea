@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Users;
+namespace Adn\Dwe64\Endpoint\Users;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Users Tokens Trait
@@ -19,7 +19,7 @@ trait TokensTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' .$username . '/tokens');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -35,7 +35,7 @@ trait TokensTrait
 
         $response = $this->client->request(self::BASE_URI . '/' .$username . '/tokens', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

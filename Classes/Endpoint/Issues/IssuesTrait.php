@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Issues;
+namespace Adn\Dwe64\Endpoint\Issues;
 
-use Avency\Gitea\Client;
+use DateTime;
+use GuzzleHttp\Utils;
 
 /**
  * Issues Issues Trait
@@ -38,7 +39,7 @@ trait IssuesTrait
 
         $response = $this->client->request(self::BASE_URI . '/issues/search', 'GET', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -50,7 +51,7 @@ trait IssuesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -61,7 +62,7 @@ trait IssuesTrait
      * @param array|null $assignees
      * @param string|null $body
      * @param bool|null $closed
-     * @param \Datetime|null $dueDate
+     * @param Datetime|null $dueDate
      * @param array|null $labels
      * @param int|null $milestone
      * @return array
@@ -74,7 +75,7 @@ trait IssuesTrait
         array $assignees = null,
         string $body = null,
         bool $closed = null,
-        \Datetime $dueDate = null,
+        Datetime $dueDate = null,
         array $labels = null,
         int $milestone = null
     ): array
@@ -85,7 +86,7 @@ trait IssuesTrait
             'assignees' => $assignees,
             'body' => $body,
             'closed' => $closed,
-            'due_date' => $dueDate ? $dueDate->format(\DateTime::ATOM) : null,
+            'due_date' => $dueDate ? $dueDate->format(DateTime::ATOM) : null,
             'labels' => $labels,
             'milestone' => $milestone,
         ];
@@ -93,6 +94,6 @@ trait IssuesTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

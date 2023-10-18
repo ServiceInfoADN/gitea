@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint;
+namespace Adn\Dwe64\Endpoint;
 
-use Avency\Gitea\Client;
-use Avency\Gitea\Endpoint\Repositories\BranchesTrait;
-use Avency\Gitea\Endpoint\Repositories\CollaboratorsTrait;
-use Avency\Gitea\Endpoint\Repositories\CommitsTrait;
-use Avency\Gitea\Endpoint\Repositories\ContentsTrait;
-use Avency\Gitea\Endpoint\Repositories\ForksTrait;
-use Avency\Gitea\Endpoint\Repositories\GitTrait;
-use Avency\Gitea\Endpoint\Repositories\HooksTrait;
-use Avency\Gitea\Endpoint\Repositories\KeysTrait;
-use Avency\Gitea\Endpoint\Repositories\PullsTrait;
-use Avency\Gitea\Endpoint\Repositories\ReleasesTrait;
-use Avency\Gitea\Endpoint\Repositories\RepositoryTrait;
-use Avency\Gitea\Endpoint\Repositories\StatusesTrait;
-use Avency\Gitea\Endpoint\Repositories\SubscriptionTrait;
-use Avency\Gitea\Endpoint\Repositories\TopicsTrait;
+
+use Adn\Dwe64\Endpoint\Repositories\BranchesTrait;
+use Adn\Dwe64\Endpoint\Repositories\CollaboratorsTrait;
+use Adn\Dwe64\Endpoint\Repositories\CommitsTrait;
+use Adn\Dwe64\Endpoint\Repositories\ContentsTrait;
+use Adn\Dwe64\Endpoint\Repositories\ForksTrait;
+use Adn\Dwe64\Endpoint\Repositories\GitTrait;
+use Adn\Dwe64\Endpoint\Repositories\HooksTrait;
+use Adn\Dwe64\Endpoint\Repositories\KeysTrait;
+use Adn\Dwe64\Endpoint\Repositories\PullsTrait;
+use Adn\Dwe64\Endpoint\Repositories\ReleasesTrait;
+use Adn\Dwe64\Endpoint\Repositories\RepositoryTrait;
+use Adn\Dwe64\Endpoint\Repositories\StatusesTrait;
+use Adn\Dwe64\Endpoint\Repositories\SubscriptionTrait;
+use Adn\Dwe64\Endpoint\Repositories\TopicsTrait;
 
 /**
  * Repositories endpoint
@@ -42,16 +42,4 @@ class Repositories extends AbstractEndpoint implements EndpointInterface
 
     const BASE_URI = '/repos';
 
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
-     * @param Client $client
-     */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
 }

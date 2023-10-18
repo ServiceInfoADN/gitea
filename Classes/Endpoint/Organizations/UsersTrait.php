@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Organizations;
+namespace Adn\Dwe64\Endpoint\Organizations;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Organizations Users Trait
@@ -18,7 +18,7 @@ trait UsersTrait
     {
         $response = $this->client->request('/user/orgs');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -29,6 +29,6 @@ trait UsersTrait
     {
         $response = $this->client->request('/users/' . $username . '/orgs');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

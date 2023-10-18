@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Repositories;
+namespace Adn\Dwe64\Endpoint\Repositories;
 
-use Avency\Gitea\Client;
+use DateTime;
+use GuzzleHttp\Utils;
 
 /**
  * Repositories Contents Trait
@@ -26,7 +27,7 @@ trait ContentsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/contents');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -45,7 +46,7 @@ trait ContentsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/contents/' . $filepath);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -59,8 +60,8 @@ trait ContentsTrait
      * @param string|null $branch
      * @param string|null $committerEmail
      * @param string|null $committerName
-     * @param \DateTime|null $authorDate
-     * @param \DateTime|null $committerDate
+     * @param DateTime|null $authorDate
+     * @param DateTime|null $committerDate
      * @param string|null $message
      * @param string|null $newBranch
      * @return array
@@ -76,8 +77,8 @@ trait ContentsTrait
         string $branch = null,
         string $committerEmail = null,
         string $committerName = null,
-        \DateTime $authorDate = null,
-        \DateTime $committerDate = null,
+        DateTime $authorDate = null,
+        DateTime $committerDate = null,
         string $message = null,
         string $newBranch = null
     ): array
@@ -95,8 +96,8 @@ trait ContentsTrait
                 'name' => $committerName,
             ],
             'dates' => [
-                'author' => $authorDate ? $authorDate->format(\DateTime::ATOM) : null,
-                'committer' => $committerDate ? $committerDate->format(\DateTime::ATOM) : null,
+                'author' => $authorDate ? $authorDate->format(DateTime::ATOM) : null,
+                'committer' => $committerDate ? $committerDate->format(DateTime::ATOM) : null,
             ],
             'message' => $message,
             'new_branch' => $newBranch,
@@ -105,7 +106,7 @@ trait ContentsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/contents/' . $filepath, 'PUT', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -118,8 +119,8 @@ trait ContentsTrait
      * @param string|null $branch
      * @param string|null $committerEmail
      * @param string|null $committerName
-     * @param \DateTime|null $authorDate
-     * @param \DateTime|null $committerDate
+     * @param DateTime|null $authorDate
+     * @param DateTime|null $committerDate
      * @param string|null $message
      * @param string|null $newBranch
      * @return array
@@ -134,8 +135,8 @@ trait ContentsTrait
         string $branch = null,
         string $committerEmail = null,
         string $committerName = null,
-        \DateTime $authorDate = null,
-        \DateTime $committerDate = null,
+        DateTime $authorDate = null,
+        DateTime $committerDate = null,
         string $message = null,
         string $newBranch = null
     ): array
@@ -152,8 +153,8 @@ trait ContentsTrait
                 'name' => $committerName,
             ],
             'dates' => [
-                'author' => $authorDate ? $authorDate->format(\DateTime::ATOM) : null,
-                'committer' => $committerDate ? $committerDate->format(\DateTime::ATOM) : null,
+                'author' => $authorDate ? $authorDate->format(DateTime::ATOM) : null,
+                'committer' => $committerDate ? $committerDate->format(DateTime::ATOM) : null,
             ],
             'message' => $message,
             'new_branch' => $newBranch,
@@ -162,7 +163,7 @@ trait ContentsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/contents/' . $filepath, 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -176,8 +177,8 @@ trait ContentsTrait
      * @param string|null $branch
      * @param string|null $committerEmail
      * @param string|null $committerName
-     * @param \DateTime|null $authorDate
-     * @param \DateTime|null $committerDate
+     * @param DateTime|null $authorDate
+     * @param DateTime|null $committerDate
      * @param string|null $message
      * @param string|null $newBranch
      * @return array
@@ -192,8 +193,8 @@ trait ContentsTrait
         string $branch = null,
         string $committerEmail = null,
         string $committerName = null,
-        \DateTime $authorDate = null,
-        \DateTime $committerDate = null,
+        DateTime $authorDate = null,
+        DateTime $committerDate = null,
         string $message = null,
         string $newBranch = null
     ): array
@@ -210,8 +211,8 @@ trait ContentsTrait
                 'name' => $committerName,
             ],
             'dates' => [
-                'author' => $authorDate ? $authorDate->format(\DateTime::ATOM) : null,
-                'committer' => $committerDate ? $committerDate->format(\DateTime::ATOM) : null,
+                'author' => $authorDate ? $authorDate->format(DateTime::ATOM) : null,
+                'committer' => $committerDate ? $committerDate->format(DateTime::ATOM) : null,
             ],
             'message' => $message,
             'new_branch' => $newBranch,
@@ -220,7 +221,7 @@ trait ContentsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/contents/' . $filepath, 'DELETE', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -233,7 +234,7 @@ trait ContentsTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/editorconfig/' . $filepath);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Organizations;
+namespace Adn\Dwe64\Endpoint\Organizations;
 
-use Avency\Gitea\Client;
+use GuzzleHttp\Utils;
 
 /**
  * Organizations Teams Trait
@@ -19,7 +19,7 @@ trait TeamsTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $organization . '/teams');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -54,7 +54,7 @@ trait TeamsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $organization . '/teams', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -83,7 +83,7 @@ trait TeamsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $organization . '/teams/search', 'GET', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -94,7 +94,7 @@ trait TeamsTrait
     {
         $response = $this->client->request('/teams/' . $id);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -140,7 +140,7 @@ trait TeamsTrait
 
         $response = $this->client->request('/teams/' . $id, 'PATCH', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -151,7 +151,7 @@ trait TeamsTrait
     {
         $response = $this->client->request('/teams/' . $id . '/members');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -163,7 +163,7 @@ trait TeamsTrait
     {
         $response = $this->client->request('/teams/' . $id . '/members/' . $username);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -198,7 +198,7 @@ trait TeamsTrait
     {
         $response = $this->client->request('/teams/' . $id . '/repos');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

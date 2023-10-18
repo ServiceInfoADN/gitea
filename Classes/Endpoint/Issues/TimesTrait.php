@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Issues;
+namespace Adn\Dwe64\Endpoint\Issues;
 
-use Avency\Gitea\Client;
+use DateTime;
+use GuzzleHttp\Utils;
 
 /**
  * Issues Times Trait
@@ -21,7 +22,7 @@ trait TimesTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues/' . $index . '/times');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -57,7 +58,7 @@ trait TimesTrait
      * @param int $index
      * @param int $time
      * @param string|null $username
-     * @param \DateTime|null $createdDate
+     * @param DateTime|null $createdDate
      * @return array
      */
     public function addTime(
@@ -66,18 +67,18 @@ trait TimesTrait
         int $index,
         int $time,
         string $username = null,
-        \DateTime $createdDate = null
+        DateTime $createdDate = null
     ): array
     {
         $options['json'] = [
             'time' => $time,
             'user_name' => $username,
-            'created' => $createdDate ? $createdDate->format(\DateTime::ATOM) : null,
+            'created' => $createdDate ? $createdDate->format(DateTime::ATOM) : null,
         ];
         $options['json'] = $this->removeNullValues($options['json']);
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/issues/' . $index . '/times', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 }

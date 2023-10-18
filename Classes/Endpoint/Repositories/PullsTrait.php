@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Avency\Gitea\Endpoint\Repositories;
+namespace Adn\Dwe64\Endpoint\Repositories;
 
-use Avency\Gitea\Client;
+use DateTime;
+use GuzzleHttp\Utils;
 
 /**
  * Repositories Pulls Trait
@@ -42,7 +43,7 @@ trait PullsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/pulls', 'GET', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -54,7 +55,7 @@ trait PullsTrait
      * @param array|null $assignees
      * @param string|null $title
      * @param string|null $body
-     * @param \DateTime|null $dueDate
+     * @param DateTime|null $dueDate
      * @param array|null $labels
      * @param int|null $milestone
      * @return array
@@ -68,7 +69,7 @@ trait PullsTrait
         string $title,
         array $assignees = null,
         string $body = null,
-        \DateTime $dueDate = null,
+        DateTime $dueDate = null,
         array $labels = null,
         int $milestone = null
     ): array
@@ -80,7 +81,7 @@ trait PullsTrait
             'assignees' => $assignees,
             'title' => $title,
             'body' => $body,
-            'due_date' => $dueDate ? $dueDate->format(\DateTime::ATOM) : null,
+            'due_date' => $dueDate ? $dueDate->format(DateTime::ATOM) : null,
             'labels' => $labels,
             'milestone' => $milestone,
         ];
@@ -88,7 +89,7 @@ trait PullsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/pulls', 'POST', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -105,7 +106,7 @@ trait PullsTrait
     {
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/pulls/' . $index, 'GET');
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -117,7 +118,7 @@ trait PullsTrait
      * @param string|null $state
      * @param array|null $assignees
      * @param string|null $body
-     * @param \DateTime|null $dueDate
+     * @param DateTime|null $dueDate
      * @param bool|null $unsetDueDate
      * @param array|null $labels
      * @param int|null $milestone
@@ -132,7 +133,7 @@ trait PullsTrait
         string $state = null,
         array $assignees = null,
         string $body = null,
-        \DateTime $dueDate = null,
+        DateTime $dueDate = null,
         bool $unsetDueDate = null,
         array $labels = null,
         int $milestone = null
@@ -144,7 +145,7 @@ trait PullsTrait
             'title' => $title,
             'state' => $state,
             'body' => $body,
-            'due_date' => $dueDate ? $dueDate->format(\DateTime::ATOM) : null,
+            'due_date' => $dueDate ? $dueDate->format(DateTime::ATOM) : null,
             'unsetDueDate' => $unsetDueDate,
             'labels' => $labels,
             'milestone' => $milestone,
@@ -153,7 +154,7 @@ trait PullsTrait
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/pulls/' . $index, 'PATCH', $options);
 
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+        return Utils::jsonDecode($response->getBody()->getContents(), true);
     }
 
     /**

@@ -5,7 +5,7 @@
     "type": "library",
     "homepage": "https://www.avency.de",
     "license": ["MIT"],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=7.4",

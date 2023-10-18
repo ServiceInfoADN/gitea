@@ -4,6 +4,8 @@
     "type": "library",
     "homepage": "https://www.avency.de",
     "license": ["MIT"],
+    "minimum-stability": "main",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.4",
         "guzzlehttp/guzzle": ">=7.3"

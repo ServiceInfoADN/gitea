@@ -24,10 +24,13 @@
     "require-dev": {
         "phpstan/phpstan": "^1.10"
     },
-    "repositories": {
-        "adn-repository": {
+    "repositories": [
+        {
+            "packagist.org": false
+        },
+        {
             "type": "vcs",
             "url": "https://github.com/ServiceInfoADN/gitea.git"
         }
-    }
+    ]
 }

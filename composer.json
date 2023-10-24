@@ -1,6 +1,6 @@
 {
     "name": "serviceinfoadn/gitea",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Gitea API",
     "type": "library",
     "homepage": "https://www.avency.de",
